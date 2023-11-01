@@ -1,0 +1,11 @@
+∇res←a plus b;length
+length←1+⌈/≢(a) (b)
+
+⍝ input (bit_value_a bit_value_b earlier_overflow)
+⍝ Returns (bit_value overflow_bit)
+add_bit←{(2|+/⍵) (1<+/⍵)}
+
+⍝ input (bit_value_a bit_value_b earlier_overflow)
+⍝ Returns (bit_value overflow_bit)
+subtract_bit_ab←{}
+∇
