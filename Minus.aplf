@@ -1,0 +1,2 @@
+ res←a Minus b
+ res←a Plus (Neg b)
