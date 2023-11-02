@@ -1,0 +1,7 @@
+res←Balance a;reoccuring;k
+reoccuring←⊃a
+k←{
+    ⍵⌷⍺=reoccuring: ⍺k⍵+1
+    ⍵
+}
+res←(¯2+a k 1)↓a
