@@ -6,6 +6,8 @@
 
  fix←{
      (⊃⍵)∊0 1:⍺,⍵ ⍝ nothing to balance
-     (⍺+1),0,1↓⍵  ⍝ overflow in this bit
+     ⍝ Overflow
+     new←2|⊃⍵
+     (⍺+1),new,1↓⍵  ⍝ overflow in this bit
  }
  res←1↓⊃fix⌿0,a
