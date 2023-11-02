@@ -1,4 +1,6 @@
  res←a Plus b;length;add_bit;subtract_bit_ab;overflow;c;d
+ a←Balance a
+ b←Balance b
  length←1+⌈/≢¨(a)(b)
  res←length⍴0
 
@@ -10,3 +12,4 @@
  add_bit←{(2|+/⍵)(1<+/⍵)}
  overflow←0 0
  {(⍵⌷(⌽res))(1⌷overflow)←add_bit(⍵⌷(⌽a))(⍵⌷(⌽b))(1⌷overflow)}¨⍳length
+ res←Balance res
