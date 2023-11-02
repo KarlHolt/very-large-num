@@ -1,15 +1,10 @@
- res←a Plus b;length;add_bit;subtract_bit_ab;overflow;c;d
- a←Balance a
- b←Balance b
- length←1+⌈/≢¨(a)(b)
- res←length⍴0
+ res←a Plus b;length
 
- (a res)←a Pad res
- (a b)←a Pad b
+ ⍝ The length grows by 1 at most
+ length←1+a⌈⍥≢b
 
-⍝ input (bit_value_a bit_value_b earlier_overflow)
-⍝ Returns (bit_value overflow_bit)
- add_bit←{(2|+/⍵)(1<+/⍵)}
- overflow←0 0
- {(⍵⌷(⌽res))(1⌷overflow)←add_bit(⍵⌷(⌽a))(⍵⌷(⌽b))(1⌷overflow)}¨⍳length
- res←Balance res
+ ⍝ Make the input numbers 'length' long
+ (a b)←a(length Pad)b
+
+ ⍝ Add the numbers
+ res←Trim Balance a+b

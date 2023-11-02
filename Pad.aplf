@@ -1,4 +1,12 @@
-res←a Pad b;n;first_digit;pad
-n←⌈/≢¨(a)(b)
-pad←{((n-≢⍵)⍴⊃⍵),⍵}
-res←(pad a)(pad b)
+ (a b)←a(len Pad)b;n;first_digit;pad
+
+ ⍝ Pad array a and b to be the same length len.
+ ⍝ If the length operand is ⍬, the longest of a and b is used
+ ⍝ as the length.
+
+ :If len≡⍬
+     len←a⌈⍥≢b
+ :EndIf
+
+ pad←{((len-≢⍵)⍴⊃⍵),⍵}
+ (a b)←pad¨a b

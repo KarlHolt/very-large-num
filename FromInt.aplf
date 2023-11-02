@@ -1,0 +1,17 @@
+ r←FromInt n;bits;pos
+ ⍝ Create a bignum from an integer
+
+ ⍝ Check that the type is one of the integer types
+ :If ~(⎕DR n)∊11 83 163 323
+     ⎕SIGNAL 11
+ :EndIf
+
+ r←(2∘⊥⍣¯1)|n
+
+ :If ⊃r
+     r←0,r
+ :EndIf
+
+ :If n<0
+     r←Neg r
+ :EndIf

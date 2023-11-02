@@ -1,7 +1,11 @@
-res←Balance a;reoccuring;k
-reoccuring←⊃a
-k←{
-    ⍵⌷⍺=reoccuring: ⍺k⍵+1
-    ⍵
-}
-res←(¯2+a k 1)↓a
+ res←Balance a;fix
+
+ ⍝ Walk from right to left through the bits and fix the overflows (2's)
+ ⍝ A reduction walks from the left :)
+ ⍝ To make the reduction work on the leftmost bit, add a 0 and remove it later
+
+ fix←{
+     (⊃⍵)∊0 1:⍺,⍵ ⍝ nothing to balance
+     (⍺+1),0,1↓⍵  ⍝ overflow in this bit
+ }
+ res←1↓⊃fix⌿0,a

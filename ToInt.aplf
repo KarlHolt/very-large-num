@@ -1,0 +1,21 @@
+ r←ToInt bits;neg
+
+ ⍝ Convert a bignum to an integer
+ neg←1=⊃bits
+ :If neg←1=⊃bits
+     bits←Neg bits
+ :EndIf
+
+ r←2⊥bits
+
+ :Trap 11
+     :If (Trim bits)≢FromInt r
+         →Fail
+     :EndIf
+ :Else
+Fail:'Bignum too large to be converted to an integer'⎕SIGNAL 11
+ :EndTrap
+
+ :If neg
+     r←-r
+ :EndIf

@@ -1,0 +1,3 @@
+ r←Trim a;n;x
+ ⍝ Turn a bignum into its shortest form by removing un-needed bits
+ r←a↓⍨(a⍳~⊃a)-2

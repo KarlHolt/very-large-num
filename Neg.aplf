@@ -1,7 +1,2 @@
- res←Neg a;flip
- flip←{0=⍵}
- :If 0=⊃a
-    res←0 1 Plus flip¨a
- :Else
-    res←0 1 Plus flip¨a
- :EndIf
+ res←Neg a
+ res←0 1 Plus~a
