@@ -1,0 +1,4 @@
+res←a Pad b;n;first_digit;pad
+n←⌈/≢¨(a)(b)
+pad←{((n-≢⍵)⍴⊃⍵),⍵}
+res←(pad a)(pad b)
