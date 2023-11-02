@@ -2,10 +2,11 @@
  length←1+⌈/≢¨(a)(b)
  res←length⍴0
 
+ (a res)←a Pad res
  (a b)←a Pad b
 
 ⍝ input (bit_value_a bit_value_b earlier_overflow)
 ⍝ Returns (bit_value overflow_bit)
- add_bit←{(2|+/⍵) (1<+/⍵)}
-overflow←0
-{(⍵⌷res) (overflow)←add_bit (⍵⌷a) (⍵⌷b) (overflow)}¨⍳(length-1)
+ add_bit←{(2|+/⍵)(1<+/⍵)}
+ overflow←0 0
+ {(⍵⌷(⌽res))(1⌷overflow)←add_bit(⍵⌷(⌽a))(⍵⌷(⌽b))(1⌷overflow)}¨⍳length
