@@ -1,4 +1,4 @@
- (a b)←a(len Pad)b;n;first_digit;pad
+ (a b)←{a}(len Pad)b;n;first_digit;pad
 
  ⍝ Pad array a and b to be the same length len.
  ⍝ If the length operand is ⍬, the longest of a and b is used
@@ -6,6 +6,10 @@
 
  :If len≡⍬
      len←a⌈⍥≢b
+ :ElseIf 0=⎕NC'a'
+     pad←{((len-≢⍵)⍴⊃⍵),⍵}
+     (a b)←(⍬) (pad b)
+     :Return
  :EndIf
 
  pad←{((len-≢⍵)⍴⊃⍵),⍵}
