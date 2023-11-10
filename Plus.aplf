@@ -7,4 +7,5 @@
  (a b)←a(length Pad)b
 
  ⍝ Add the numbers
- res←Trim Balance a+b
+ fast_adder←{r←⍺≠⍵ ⋄ o←⍺∧⍵ ⋄ ~1∊o:r ⋄ r ∇ 1↓o,0}
+ res←Trim a fast_adder b
