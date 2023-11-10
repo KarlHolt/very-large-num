@@ -1,8 +1,9 @@
-res←int LeftShift a;temp
+ res←{int} LeftShift a;temp;base_bit;shifting
 
-:If int = 1
-    res←a Plus a
-:Else
-    temp←a Plus a
-    res←(int - 1) LeftShift temp
-:endIf
+:If  0=⎕NC'int'
+    int←1
+:EndIf
+
+ base_bit←⊃a
+
+ res←a,int/base_bit
