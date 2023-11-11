@@ -1,0 +1,21 @@
+ res←a GreaterThan b;significant_bit;Aabs;Babs;temp
+
+ (Aabs Babs)←Abs¨a b
+ (Aabs Babs)←Aabs(⍬ Pad)Babs
+
+ :If 1=(⊃a)+(⊃b)
+     :If (1=⊃a)
+         res←0
+     :Else
+         res←1
+     :EndIf
+     :Return
+ :EndIf
+
+ x←{(⊃⍸0≢¨⍵)⊃⍵}
+
+ res←0
+ temp←Aabs-Babs
+ :If 0<+/|temp
+    res←1=x temp
+ :EndIf
