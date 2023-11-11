@@ -1,0 +1,21 @@
+ res←a Divide b;Aabs;Babs;temp;quotient;i;dude;dude2
+ ⍝ a / b
+
+ (Aabs Babs)←Abs¨a b
+ (Aabs Babs)←Aabs(⍬ Pad)Babs
+
+ temp←(≢Aabs)⍴0
+ quotient←(≢Aabs)⍴0
+ :For i :In ⌽(⍳(≢Aabs+1))-1
+    :If ~(temp Plus (i LeftShift b)) GreaterThan a
+        temp←temp Plus i LeftShift b
+        dude←i LeftShift 0 1
+        (dude quotient)←dude(⍬ Pad)quotient
+        quotient←quotient∨dude
+    :EndIf
+ :EndFor
+
+ res←quotient
+ :If 1=(⊃a)+(⊃b)
+    res←Neg quotient
+ :EndIf
