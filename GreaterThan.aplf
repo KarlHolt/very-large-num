@@ -12,10 +12,14 @@
      :Return
  :EndIf
 
- x←{(⊃⍸0≢¨⍵)⊃⍵}
+ x←{(⊃⍸0≠⍵)⊃⍵}
 
  res←0
  temp←Aabs-Babs
  :If 0<+/|temp
-    res←1=x temp
+    :If 1=⊃a
+        res←¯1=x temp
+    :Else
+        res←1=x temp
+    :EndIf
  :EndIf
