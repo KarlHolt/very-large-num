@@ -1,0 +1,6 @@
+ res←Abs a
+ :If 1=⊃a
+    res←Neg a
+ :Else
+     res←a
+ :EndIf
