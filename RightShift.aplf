@@ -1,0 +1,9 @@
+ res←{int} RightShift a
+
+:If  0=⎕NC'int'
+    int←1
+:ElseIf int≥≢a
+    int←(≢a)-1
+:EndIf
+
+res←(-int)↓a
