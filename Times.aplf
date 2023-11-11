@@ -1,0 +1,26 @@
+ res←a Times b;i;temp;sign;Aabs;Babs
+
+ (Aabs Babs)←Abs¨a b
+
+ (Aabs Babs)←Aabs (⍬ Pad) Babs
+
+
+ :If 1=+/Babs
+    res←((⍸⌽Babs)-1) LeftShift Aabs
+    :Return
+ :EndIf
+
+ temp ← 0 0
+ :For i :In ⍳≢Aabs
+     :If 1=(⌽Babs)[i]
+         temp←temp Plus (Aabs Times 0,1,(i-1)⍴0)
+     :EndIf
+ :EndFor
+
+
+ ⍝ The case where either a or b but not both is negative
+ :If 1=(⊃a)+(⊃b)
+    temp←Neg temp
+ :EndIf
+
+ res←temp
