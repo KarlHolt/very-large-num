@@ -1,0 +1,2 @@
+ res←a LessThan b
+ res←b GreaterThan a
