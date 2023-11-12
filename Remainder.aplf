@@ -1,0 +1,3 @@
+ r←a Remainder b;c
+ c←a Divide b
+ r←a Minus(c Times b)
