@@ -1,6 +1,11 @@
  r←ToInt bits;neg
 
  ⍝ Convert a bignum to an integer
+ :If 0=+/bits
+    r←0
+    :Return
+ :EndIf
+
  neg←1=⊃bits
  :If neg←1=⊃bits
      bits←Neg bits
