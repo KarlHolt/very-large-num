@@ -1,4 +1,5 @@
  res←int Power a;temp;i
+ ⍝ pow(a, int) that is a×a int times
 
  temp←0 1
  :For i :In ⍳int
