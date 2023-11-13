@@ -1,0 +1,7 @@
+ res←int Power a;temp;i
+
+ temp←0 1
+ :For i :In ⍳int
+     temp←temp Times a
+ :EndFor
+ res←temp
