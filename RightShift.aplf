@@ -1,9 +1,13 @@
- res←{int} RightShift a
+ res←{int}RightShift a
 
-:If  0=⎕NC'int'
-    int←1
-:ElseIf int≥≢a
-    int←(≢a)-1
-:EndIf
+ :If 0=⎕NC'int'
+     int←1
+ :ElseIf int≥≢a
+     int←(≢a)-1
+ :EndIf
 
-res←(-int)↓a
+ :If int>(≢a)-2
+     res←0 0
+ :Else
+    res←(-int)↓a
+ :EndIf
