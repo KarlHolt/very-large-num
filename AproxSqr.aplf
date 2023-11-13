@@ -1,0 +1,14 @@
+res←AproxSqr a;i;temp;result
+ ⍝ Will yield the Square root if it is an integer, if not it will return ⌈Square
+ ⍝ Will only return the positive Square root,
+ ⍝ it is up to the programmer to handle the negative case
+
+ result←0 0
+ :While (2 Power result) LessThan a
+    temp←0 1
+    :While  (2 Power result Plus LeftShift temp) LessThan a
+       temp←LeftShift temp
+    :EndWhile
+    result←result Plus temp
+ :EndWhile
+ res←result
