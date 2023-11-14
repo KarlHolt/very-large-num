@@ -1,4 +1,12 @@
- res←a GreaterThan b;significant_bit;Aabs;Babs;temp
+ res←a GreaterThan b;significant_bit;Aabs;Babs;temp;i
+
+ :If 3=≡b
+     res←⍬
+     :For i :In ⍳≢b
+         res←res,a GreaterThan ⊃⊃b[i]
+     :EndFor
+     :Return
+ :EndIf
 
  (Aabs Babs)←Abs¨a b
  (Aabs Babs)←Aabs(⍬ Pad)Babs
@@ -17,9 +25,9 @@
  res←0
  temp←Aabs-Babs
  :If 0<+/|temp
-    :If 1=⊃a
-        res←¯1=x temp
-    :Else
-        res←1=x temp
-    :EndIf
+     :If 1=⊃a
+         res←¯1=x temp
+     :Else
+         res←1=x temp
+     :EndIf
  :EndIf
