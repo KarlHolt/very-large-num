@@ -1,2 +1,9 @@
-res←IsPrime a
-res←a Equal ⊃⌽PrimesBelow 0 0 1 Plus a
+res←IsPrime a;primes;i
+primes←PrimesBelow 0 0 1 Plus AproxSqr a
+:For i :In ⍳≢primes
+    :If 0 0 Equal a Remainder ⊃primes[i]
+        res←0
+        :Return
+    :EndIf
+:EndFor
+res←1
