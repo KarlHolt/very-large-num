@@ -1,0 +1,29 @@
+ primes←Primes n;cache;why_needed
+ ⍝ Return the first n prime numbers
+
+ :If n LessThan 0
+     ⎕SIGNAL 11
+ :EndIf
+
+ ⍝ Use a cache of prime numbers
+ :If 0=#.⎕NC'_cache'
+     '_cache'#.⎕NS ⍬
+     #._cache.primes←(⊂FromInt 2)(⊂FromInt 3)
+ :EndIf
+ cache←#._cache
+
+ why_needed←{
+     ⍺:⊂⍵
+     ⍬
+ }
+
+ primes←cache.primes{
+     (ToInt n)≤≢⍺:⍺
+     (⍺,(~0∊⍵ Remainders ⍺)why_needed ⍵)∇(⊂0 1 0 Plus⊃⍵)
+ }⊂0 1 0 Plus⊃⊃⌽cache.primes
+
+ :If primes>⍥≢cache.primes
+     cache.primes←primes
+     ⎕←'... prime number cache now contains ',(⍕≢primes),' elements ...'
+ :EndIf
+ primes←⊃¨(ToInt n)↑primes

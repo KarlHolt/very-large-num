@@ -1,0 +1,18 @@
+ r←a Remainders bs;c;i;sqr
+ ⍝ Same as Remainder but as is a list of numbers
+ a←⊃a
+ r←⍬
+ sqr←AproxSqr a
+
+ :For i :In ⍳≢bs
+     :If (⊃⊃bs[i])GreaterThan sqr
+         r←r,1
+         :Return
+     :EndIf
+     c←a Divide⊃⊃bs[i]
+     :If ~(a Minus(c Times⊃⊃bs[i]))GreaterThan 0 0
+         r←0 0
+         :Return
+     :EndIf
+     r←r,1
+ :EndFor

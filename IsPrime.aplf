@@ -1,0 +1,2 @@
+res←IsPrime a
+res←a Equal ⊃⌽PrimesBelow 0 0 1 Plus a
