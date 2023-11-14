@@ -1,2 +1,3 @@
  res←a Equal b
+ (a b)←a(⍬ Pad) b
  res←∧⌿a≡b
